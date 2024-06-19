@@ -25,7 +25,12 @@ function createGrid(totCells) {
 
 function colorChange() {
     const newCell = event.target;
-    newCell.setAttribute("id", "clicked");
+    if (newCell.id === "clicked") {
+        newCell.removeAttribute("id")
+    } else{
+        newCell.setAttribute("id", "clicked");
+    }
+    
     
 }
 
