@@ -1,11 +1,11 @@
 const project = document.querySelector('.project');
 
-let grid = {rows:0 , cols: 0} ;
-
-const totCells = grid.rows * grid.cols;
-
 const changeBtn = document.getElementById("change");
 changeBtn.addEventListener("click", changeGrid);
+
+let grid = {rows: 0 , cols: 0} ;
+
+let totCells = grid.rows * grid.cols;
 
 //createGrid(totCells);
 
@@ -42,16 +42,22 @@ function setToBox() {
 }
 
 function changeGrid() {
-    const rows = parseInt(prompt("How many rows?"));
-    const cols = parseInt(prompt("How many columns?"));
-    while (rows > 100 ) {
-       rows = prompt("Too many rows... overloaded")
+    let row = parseInt(prompt("How many rows?"));
+    let col = parseInt(prompt("How many columns?"));
+    while (row > 100 ) {
+       row = parseInt(prompt("Too many rows... overloaded"));
+       
     }
-    while (cols > 100) {
-        cols = prompt("Too many columns... oh noooo!")
+    while (col > 100) {
+        col = parseInt(prompt("Too many columns... oh noooo!"));
+        
     }
-    grid.rows += rows;
-    grid.cols += cols;
+    console.log(row)
+    console.log(col)
+    grid.rows = row;
+    grid.cols = col;
     
+    totCells = row * col
+
     createGrid(totCells);
 }
