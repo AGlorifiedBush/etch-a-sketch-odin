@@ -25,11 +25,7 @@ function createGrid(totCells) {
 
 function colorChange() {
     const newCell = event.target;
-    if (newCell.id === "clicked") {
-        newCell.removeAttribute("id")
-    } else{
-        newCell.setAttribute("id", "clicked");
-    }
+    newCell.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
     
     
 }
